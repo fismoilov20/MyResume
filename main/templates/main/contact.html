@@ -1,0 +1,62 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}Contact{% endblock %}
+{% block description %}Contact, Description{% endblock %}
+{% block keywords %}My Resume, Contact{% endblock %}
+<!-- ================================
+End SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_css %}{% endblock %}
+<!-- ================================
+End CSS blocks
+================================= -->
+
+
+{% block content %}
+<!-- ================================
+Start Content
+================================= -->
+<section>
+  <div class="innerPageBannerCol">
+    <div class="container">
+      <div class="row g-4 g-md-3  align-items-center">
+        <div class="col-md-6">
+          <div class="bannerContent">
+            <h1 class="xlTitle pb-md-3">Contact us below</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="lightBg">
+    <div class="container">
+        <form id="contactForm" method="post" action="/contact/">{% csrf_token %}
+            <label for="name">Name</label>
+            {{form.name}}                         <!-- <input type="text" id="name" name="name" placeholder="Your name.."> --> 
+
+            <label for="email">Email</label>
+            {{form.email}}                        <!-- <input type="email" id="email" name="email" placeholder="Your email.."> -->
+
+            <label for="message">Message</label>
+            {{form.message}}                      <!-- <textarea id="message" name="message" placeholder="Write something.." rows="6"></textarea> -->
+
+            <input class='btn btnPrimary' type="submit" value="Submit">
+        </form>
+    </div>
+  </div>
+</section>
+<!-- ================================
+End Content
+================================= -->
+{% endblock %}

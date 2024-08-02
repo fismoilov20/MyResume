@@ -1,4 +1,3 @@
-{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -28,13 +27,60 @@
 
   </head>
   <body>
-    {% include 'main/partials/messages.html' %}
+    <!-- <script>alert("{{ message }}");</script> -->
 
-    {% include 'main/partials/nav.html' %}
+    <!-- ================================ Start Navigation Bar ================================= -->
+    <header>
+      <div class="headerCol">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <div class="logoCol"><a href="{% url 'main:home' %}"><img src="{% static 'images/logo.png' %}" alt="..." style="border-radius: 50%; width: 50px;"></a></div>
+            </div>
+            <div class="col">
+              <div class="d-md-none">
+                <button class="navToggle">
+                  <span class="navToggle__text">Toggle Menu</span>
+                </button>
+              </div>
+              <div class="navCollapseCol">
+                <div class="navCol">
+                  <ul>
+                    <li><a href="{% url 'main:home' %}">Home</a></li>
+                    <li><a href="{% url 'main:portfolios' %}">Portfolio</a></li>
+                    <li><a href="{% url 'main:blogs' %}">Blog</a></li>
+                    <li><a href="{% url 'main:contact' %}">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ================================ End Navigation Bar ================================= -->
 
     {% block content %}{% endblock %}
     
-    {% include 'main/partials/footer.html' %}
+    <!-- ================================ Start Footer ================================= -->
+    <footer>
+      <div class="footerCol">
+        <div class="container">
+          <ul class="socialCol">
+            <li><a href="https://www.facebook.com/profile.php?id=100020345165302"><img src="{% static 'images/fb.svg' %}" alt="..."></a></li>
+            <li><a href="javascript:void(0)"><img src="{% static 'images/insta.svg' %}" alt="..."></a></li>
+            <li><a href="javascript:void(0)"><img src="{% static 'images/twitter.svg' %}" alt="..."></a></li>
+            <li><a href="https://linkedin.com/in/firdavsbek-ismoilov"><img src="{% static 'images/linkedin.svg' %}" alt="..."></a></li>
+            <li><a href="https://t.me/firdavsbekismoilov"><img src="{% static 'images/telegram.svg' %}" alt="..." style="width:50px; border-radius: 4px;"></a></li>
+          </ul>
+          <div class="copyrightCol">
+            <p>Copyright © 2024 Firdavsbek Ismoilov</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ================================ End Footer ================================= -->
+    
 
     <!-- ================================
     Start JS
